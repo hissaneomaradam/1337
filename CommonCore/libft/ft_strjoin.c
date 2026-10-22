@@ -6,7 +6,7 @@
 /*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 20:16:39 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/20 22:00:51 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/22 18:05:54 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	si1;
 	size_t	si2;
 	char	*p;
-	
+
 	if (!s1 || !s2)
 		return (NULL);
 	si1 = ft_strlen(s1);
