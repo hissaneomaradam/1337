@@ -6,23 +6,25 @@
 /*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 22:56:39 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/21 23:40:41 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/22 21:26:49 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(const char *s, char c)
+static size_t	count_words(char const *s, char c)
 {
-	size_t	count;
 	size_t	i;
+	size_t	count;
 
-	count = 0;
 	i = 0;
+	count = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
+		{
 			count++;
+		}
 		i++;
 	}
 	return (count);
@@ -38,11 +40,11 @@ static size_t	word_len(const char *s, char c)
 	return (len);
 }
 
-static void	free_all(char **arr, size_t n)
+static void	free_mem(char **s, size_t n)
 {
 	while (n--)
-		free(arr[n]);
-	free(arr);
+		free(s[n]);
+	free(s);
 }
 
 static int	fill(char **str, const char *s, char c)
@@ -63,7 +65,7 @@ static int	fill(char **str, const char *s, char c)
 			str[j] = ft_substr(s, i, len);
 			if (!str[j])
 			{
-				free_all(str, j);
+				free_mem(str, j);
 				return (0);
 			}
 			j++;
