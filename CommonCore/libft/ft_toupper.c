@@ -6,10 +6,9 @@
 /*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 22:50:44 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/18 17:52:33 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/24 18:26:06 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 int	ft_toupper(int c)
 {

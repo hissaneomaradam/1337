@@ -6,10 +6,11 @@
 /*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 01:37:20 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/19 23:43:00 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/24 21:52:04 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
