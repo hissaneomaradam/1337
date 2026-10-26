@@ -6,7 +6,7 @@
 /*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/24 22:40:17 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/24 23:20:30 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/26 04:00:32 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 unsigned int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (lst)
