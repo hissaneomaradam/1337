@@ -6,7 +6,7 @@
 /*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 23:25:30 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/18 18:04:38 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/26 17:57:19 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 
-	p = s;
+	p = (unsigned char *)s;
 	while (n--)
 	{
 		*p = '\0';
