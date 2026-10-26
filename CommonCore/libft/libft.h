@@ -6,7 +6,7 @@
 /*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 23:53:15 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/24 23:23:28 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/26 00:43:15 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_list
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 unsigned int	ft_lstsize(t_list *lst);
+void			ft_lstadd_back(t_list **lst, t_list *new);
+t_list			*ft_lstlast(t_list *lst);
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
