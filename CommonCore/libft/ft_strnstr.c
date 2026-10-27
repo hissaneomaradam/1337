@@ -33,3 +33,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
+#include <bsd/string.h>
+#include <stdio.h>
+int	main()
+{
+	char * res;
+	res = ft_strnstr("he€o","€" , 4);
+	printf("%s\n", res);
+}

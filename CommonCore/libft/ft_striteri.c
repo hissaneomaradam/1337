@@ -25,3 +25,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
+#include <stdio.h>
+void set(unsigned int s, char * c)
+{
+	(void)s;
+	(void)c;
+	printf("%c\n", '*');
+}
+int	main()
+{
+	char *s = "hello";
+	ft_striteri(s, set);
+}

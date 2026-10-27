@@ -23,3 +23,15 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+#include <stdio.h>
+int	main()
+{
+	int	s = 0;
+	int	i = 0;
+	while (i < 4)
+	{
+		ft_memset((char *)&s + i, 255, 1);
+		i++;
+	}
+	printf("%d", s);
+}

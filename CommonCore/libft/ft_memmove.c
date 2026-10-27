@@ -31,3 +31,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+	// char *src = "Hello";
+	// char dest[10];
+	// printf("ccc");
+	// printf("%s", (char *)memmove(dest, src, -1));hehello
+	char src[6] = "hello";
+	char *dest = ft_memmove(src + 2, src, 6);
+	printf("%s\n", dest);
+	printf("%s\n", src);
+
+
+}

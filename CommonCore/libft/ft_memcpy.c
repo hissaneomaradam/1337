@@ -17,8 +17,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 	unsigned char		*d;
 
-	if (!dest && !src)
-		return (NULL);
 	s = (const unsigned char *)src;
 	d = (unsigned char *)dest;
 	while (n--)
@@ -28,4 +26,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		d++;
 	}
 	return (dest);
+}
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+	char *src = "Hello";
+	char dest[10];
+	printf("ccc");
+	printf("%s", (char *)ft_memcpy(NULL, NULL, 5));
+	// printf("%d" (char *)ft_memcpy(dest, src, 5));
 }

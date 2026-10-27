@@ -39,3 +39,9 @@ int	ft_atoi(const char *nptr)
 	}
 	return (sign * res);
 }
+#include <stdio.h>
+int main ()
+{
+	printf("%d\n", ft_atoi("54444444444444444444"));
+	printf("%d\n", atoi("54444444444444444444"));
+}
