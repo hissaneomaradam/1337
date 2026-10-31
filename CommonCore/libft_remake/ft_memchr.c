@@ -27,10 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-#include <stdio.h>
-#include <string.h>
-int	main()
-{
-	char *p = "hello world";
-	printf("%s\n", ft_memchr(NULL, 'w', 5));
-}

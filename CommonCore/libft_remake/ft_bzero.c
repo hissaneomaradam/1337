@@ -6,7 +6,7 @@
 /*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 21:19:48 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/28 21:33:56 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/31 04:09:42 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *p;
+	unsigned char	*p;
 
 	p = (unsigned char *)s;
 	while (n--)
