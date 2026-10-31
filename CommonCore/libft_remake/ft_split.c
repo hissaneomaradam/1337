@@ -6,13 +6,11 @@
 /*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:38:11 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/29 11:38:11 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/10/31 07:50:20 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
 
 static size_t	count_words(const char *s, char c)
 {
