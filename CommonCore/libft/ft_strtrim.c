@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 22:10:26 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/24 19:47:07 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/29 09:33:49 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/29 09:33:49 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	found(const char *set, const char c)
+int	there(int c, const char *set)
 {
 	size_t	i;
 
@@ -28,24 +28,24 @@ static int	found(const char *set, const char c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	first;
-	int	last;
+	size_t	start;
+	size_t	end;
+	size_t	len;
+	char	*res;
 
-	if (!set || !s1)
+	if (!s1 || !set)
 		return (NULL);
-	first = 0;
-	while (s1[first])
-	{
-		if (!found(set, s1[first]))
-			break ;
-		first++;
-	}
-	last = ft_strlen(s1) - 1;
-	while (last > 0 && last > first)
-	{
-		if (!found(set, s1[last]))
-			break ;
-		last--;
-	}
-	return (ft_substr(s1, first, last - first + 1));
+	start = 0;
+	end = ft_strlen(s1);
+	while (s1[start] && there(s1[start], set))
+		start++;
+	while (end > start && there(s1[end - 1], set))
+		end--;
+	len = end - start;
+	res = malloc(len + 1);
+	if (!res)
+		return (NULL);
+	ft_memcpy(res, s1 + start, len);
+	res[len] = 0;
+	return (res);
 }

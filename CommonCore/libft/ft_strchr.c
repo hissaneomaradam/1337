@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 14:05:05 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/24 19:16:57 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/29 01:23:00 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/29 01:47:41 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
+		if (s[i] == c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	if ((char)c == 0)
+	if (c == 0)
 		return ((char *)&s[i]);
 	return (NULL);
 }

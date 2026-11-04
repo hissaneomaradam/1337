@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/24 22:40:17 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/26 04:13:22 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/31 12:20:54 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/31 12:20:54 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 unsigned int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
+	unsigned int	count;
 
-	i = 0;
+	count = 0;
 	while (lst)
 	{
-		i++;
+		count++;
 		lst = lst->next;
 	}
-	return (i);
+	return (count);
 }

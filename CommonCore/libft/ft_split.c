@@ -3,28 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/20 22:56:39 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/26 22:06:46 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/29 11:38:11 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/31 07:50:20 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char const *s, char c)
+static size_t	count_words(const char *s, char c)
 {
-	size_t	i;
 	size_t	count;
+	size_t	i;
 
 	i = 0;
 	count = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
-		{
 			count++;
-		}
 		i++;
 	}
 	return (count);
@@ -32,22 +30,22 @@ static size_t	count_words(char const *s, char c)
 
 static size_t	word_len(const char *s, char c)
 {
-	size_t	len;
+	size_t	i;
 
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
 }
 
-static void	free_mem(char **s, size_t n)
+static void	free_mem(char **p1, size_t n)
 {
 	while (n--)
-		free(s[n]);
-	free(s);
+		free(p1[n]);
+	free(p1);
 }
 
-static int	fill(char **str, const char *s, char c)
+static int	fill(char **p1, const char *p, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -55,37 +53,37 @@ static int	fill(char **str, const char *s, char c)
 
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (p[i])
 	{
-		if (s[i] == c)
+		if (p[i] == c)
 			i++;
 		else
 		{
-			len = word_len(s + i, c);
-			str[j] = ft_substr(s, i, len);
-			if (!str[j])
+			len = word_len(p + i, c);
+			p1[j] = ft_substr(p, i, len);
+			if (!p1[j])
 			{
-				free_mem(str, j);
+				free_mem(p1, j);
 				return (0);
 			}
 			j++;
 			i += len;
 		}
 	}
-	str[j] = NULL;
+	p1[j] = NULL;
 	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
+	char	**p;
 
 	if (!s)
 		return (NULL);
-	str = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!str)
+	p = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!p)
 		return (NULL);
-	if (!fill(str, s, c))
+	if (!fill(p, s, c))
 		return (NULL);
-	return (str);
+	return (p);
 }

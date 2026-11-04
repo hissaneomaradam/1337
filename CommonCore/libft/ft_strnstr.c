@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 22:57:40 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/19 23:49:44 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/29 03:18:38 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/29 03:32:18 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
 	if (!little[0])
 		return ((char *)big);
+	i = 0;
 	while (i < len && big[i])
 	{
 		j = 0;
-		while ((i + j < len) && big[i + j] == little[j] && little[j])
+		while ((i + j) < len && big[i + j] == little[j] && little[j])
 		{
 			j++;
 			if (!little[j])
-				return ((char *)big + i);
+				return ((char *)&big[i]);
 		}
 		i++;
 	}

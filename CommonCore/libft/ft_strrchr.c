@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 15:46:09 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/19 23:48:10 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/29 01:38:42 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/29 03:18:18 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
@@ -18,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == (unsigned char)c)
+		if (s[i] == c)
 			return ((char *)&s[i]);
 		i--;
 	}

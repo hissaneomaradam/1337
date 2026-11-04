@@ -3,32 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/14 22:11:27 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/24 19:16:47 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/28 23:22:49 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/29 01:00:23 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	s;
 	size_t	d;
+	size_t	s;
 
-	i = 0;
-	d = 0;
 	s = ft_strlen(src);
-	if (size == 0)
-		return (s);
+	d = 0;
 	while (d < size && dest[d])
 		d++;
 	if (d == size)
-		return (size + s);
+		return (d + s);
 	if (size > 0)
 	{
-		while (src[i] && (i + d) < size - 1)
+		i = 0;
+		while (src[i] && (i + d) < (size - 1))
 		{
 			dest[d + i] = src[i];
 			i++;

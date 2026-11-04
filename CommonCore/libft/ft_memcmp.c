@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 21:43:29 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/26 04:16:57 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/29 03:08:01 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/29 03:16:39 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
+	size_t				i;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
 	i = 0;
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
 	while (i < n)
 	{
 		if (p1[i] != p2[i])

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ohissane <your@mail.com>                   +#+  +:+       +#+        */
+/*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/19 17:00:54 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/19 23:40:12 by ohissane         ###   ########.fr       */
+/*   Created: 2026/10/29 08:29:27 by ohissane          #+#    #+#             */
+/*   Updated: 2026/10/29 08:55:22 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
 	size_t	i;
-	size_t	lens;
+	char	*p;
+	size_t	slen;
 
-	lens = ft_strlen(s);
-	if (start >= lens)
-		len = 0;
-	else if (len > lens - start)
-		len = lens - start;
-	str = malloc(len + 1);
-	if (!str)
+	if (!s)
 		return (NULL);
 	i = 0;
+	slen = ft_strlen(s);
+	if (start >= slen)
+		len = 0;
+	else if (len > slen - start)
+		len = slen - start;
+	p = malloc((len + 1) * sizeof(char));
+	if (!p)
+		return (NULL);
 	while (i < len)
 	{
-		str[i] = s[i + start];
+		p[i] = s[start + i];
 		i++;
 	}
-	str[i] = 0;
-	return (str);
+	p[i] = '\0';
+	return (p);
 }

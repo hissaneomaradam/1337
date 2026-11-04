@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/26 03:12:30 by ohissane          #+#    #+#             */
-/*   Updated: 2026/10/26 04:16:23 by ohissane         ###   ########.fr       */
+/*   Created: 2026/11/02 08:27:46 by ohissane          #+#    #+#             */
+/*   Updated: 2026/11/04 01:28:02 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*new_node;
-	void	*content;
+	t_list	*newlst;
+	t_list	*newnode;
+	void	*newcont;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	new_list = NULL;
+	newlst = NULL;
 	while (lst)
 	{
-		content = f(lst->content);
-		new_node = ft_lstnew(content);
-		if (!new_node)
+		newcont = f(lst->content);
+		newnode = ft_lstnew(newcont);
+		if (!newnode)
 		{
-			del(content);
-			ft_lstclear(&new_list, del);
+			del(newcont);
+			ft_lstclear(&newlst, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, new_node);
+		ft_lstadd_back(&newlst, newnode);
 		lst = lst->next;
 	}
-	return (new_list);
+	return (newlst);
 }
