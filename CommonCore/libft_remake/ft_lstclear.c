@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -27,24 +26,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-// void	del(void *content)
-// {
-// 	free(content);
-// }
-// int	main()
-// {
-// 	t_list	*tmp;
-// 	t_list	*node;
-//
-// 	node = ft_lstnew(ft_strdup("hello"));
-// 	ft_lstadd_back(&node, ft_lstnew(ft_strdup("world")));
-// 	ft_lstadd_back(&node, ft_lstnew(ft_strdup("im")));
-// 	ft_lstadd_back(&node, ft_lstnew(ft_strdup("omar")));
-// 	tmp = node;
-// 	while (tmp)
-// 	{
-// 		printf("%s\n", (char *)tmp->content);
-// 		tmp = tmp->next;
-// 	}
-// 	ft_lstclear(&node, del);
-// }
