@@ -18,5 +18,6 @@
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);
+int	ft_putnbru(unsigned int n);
 
 #endif
