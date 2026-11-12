@@ -19,5 +19,8 @@ int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);
 int	ft_putnbru(unsigned int n);
+int	ft_putuhex(unsigned int n);
+int	ft_putlhex(unsigned int n);
+int	ft_putptr(void *p);
 
 #endif
