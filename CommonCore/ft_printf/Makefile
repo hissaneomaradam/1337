@@ -1,7 +1,7 @@
 FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 
-SRC = ft_putchar.c ft_putnbr.c ft_putstr.c ft_putnbr_u.c ft_putlhex.c ft_putuhex.c ft_putptr.c
+SRC = ft_putchar.c ft_putnbr.c ft_putstr.c ft_putnbr_u.c ft_putlhex.c ft_putuhex.c ft_putptr.c ft_write.c handle_args.c ft_printf.c
 
 OBJ = $(SRC:.c=.o)
 
