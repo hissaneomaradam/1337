@@ -32,5 +32,11 @@ int	handle_args(const char *s, va_list va)
 		return (ft_putuhex(va_arg(va, unsigned int)));
 	if (*s == '%')
 		return (ft_putchar('%'));
+	else
+	{
+		ft_putchar('%');
+		ft_putchar(*s);
+		return (2);
+	}
 	return (-1);
 }

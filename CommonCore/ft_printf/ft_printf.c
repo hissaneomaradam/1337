@@ -6,7 +6,7 @@
 /*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 18:27:06 by ohissane          #+#    #+#             */
-/*   Updated: 2026/11/14 06:03:43 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/11/14 08:18:30 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,11 @@ static int	iter(const char *s, va_list va)
 		else
 		{
 			res = ft_write(s);
-			if (res == -1)
-			{
-				return (ext(va));
-			}
-			s += res;
+			if (res != -1)
+				s += res;
 		}
 		if (res == -1)
-		{
 			return (ext(va));
-		}
 		count += res;
 	}
 	va_end(va);
