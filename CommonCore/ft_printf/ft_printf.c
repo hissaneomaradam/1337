@@ -6,11 +6,12 @@
 /*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 18:27:06 by ohissane          #+#    #+#             */
-/*   Updated: 2026/11/14 08:18:30 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/11/18 16:58:59 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <unistd.h>
 
 static int	ext(va_list va)
 {

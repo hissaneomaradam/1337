@@ -6,33 +6,24 @@
 /*   By: ohissane <ohissane@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 02:12:03 by ohissane          #+#    #+#             */
-/*   Updated: 2026/11/10 02:17:50 by ohissane         ###   ########.fr       */
+/*   Updated: 2026/11/18 19:08:23 by ohissane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	ft_strlen(const char *s)
+int	ft_putstr(char *s)
 {
 	size_t	i;
 
+	if (!s)
+		s = "(null)";
 	i = 0;
 	while (s[i])
 	{
+		if (write(1, &s[i], 1) == -1)
+			return (-1);
 		i++;
 	}
 	return (i);
-}
-
-int	ft_putstr(char *s)
-{
-	int	check;
-
-	if (!s)
-		check = (write(1, "(null)", 6));
-	else
-		check = write (1, s, ft_strlen(s));
-	if (check == -1)
-		return (-1);
-	return (check);
 }
