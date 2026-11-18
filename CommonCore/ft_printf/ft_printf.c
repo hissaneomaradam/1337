@@ -18,6 +18,19 @@ static int	ext(va_list va)
 	return (-1);
 }
 
+static int	handle_format(const char **s, va_list va)
+{
+	int	res;
+
+	res = 0;
+	(*s)++;
+	if (!**s)
+		return (ft_putchar('%'));
+	res = handle_args(*s, va);
+	(*s)++;
+	return (res);
+}
+
 static int	iter(const char *s, va_list va)
 {
 	int	res;
@@ -28,8 +41,7 @@ static int	iter(const char *s, va_list va)
 	{
 		if (*s == '%')
 		{
-			res = handle_args(++s, va);
-			s++;
+			res = handle_format(&s, va);
 		}
 		else
 		{

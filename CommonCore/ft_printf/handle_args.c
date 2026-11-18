@@ -12,9 +12,22 @@
 
 #include "ft_printf.h"
 
+static int	handle_else(const char *s)
+{
+	int	check;
+
+	check = ft_putchar('%');
+	if (check == -1)
+		return (-1);
+	check = ft_putchar(*s);
+	if (check == -1)
+		return (-1);
+	return (2);
+}
+
 int	handle_args(const char *s, va_list va)
 {
-	if (!s)
+	if (!*s)
 		return (-1);
 	if (*s == 'c')
 		return (ft_putchar(va_arg(va, int)));
@@ -33,10 +46,6 @@ int	handle_args(const char *s, va_list va)
 	if (*s == '%')
 		return (ft_putchar('%'));
 	else
-	{
-		ft_putchar('%');
-		ft_putchar(*s);
-		return (2);
-	}
+		return (handle_else(s));
 	return (-1);
 }
