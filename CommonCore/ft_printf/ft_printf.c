@@ -25,7 +25,7 @@ static int	handle_format(const char **s, va_list va)
 	res = 0;
 	(*s)++;
 	if (!**s)
-		return (ft_putchar('%'));
+		return (-1);
 	res = handle_args(*s, va);
 	(*s)++;
 	return (res);
