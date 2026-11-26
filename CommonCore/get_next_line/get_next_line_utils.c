@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -28,6 +27,8 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 	char	*str;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	str = (char *)s;
 	while (str[i])
@@ -67,9 +68,13 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	j;
 	char	*res;
 
-	if (!s1 || !s2)
+	if (!s1 && !s2)
 		return (NULL);
-	res = malloc(ft_strlen(s1) + ft_strlen(s2));
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!res)
 		return (NULL);
 	i = 0;
